@@ -26,6 +26,14 @@ class M_article extends CI_Model{
 		$hsl=$this->db->query("DELETE from wiki where id_wiki='$kode'");
 		return $hsl;
 	}
+	function get_my_article_kode($kode){
+		$hsl=$this->db->query("SELECT* FROM wiki where id_wiki ='$kode'");
+		return $hsl;
+	}
+	function update($id_wiki,$tittle,$article,$category,$nama,$gambar,$status){
+		$hsl=$this->db->query("UPDATE `wiki` SET `tittle` = '$tittle', `category` = '$category', `image` = '$gambar', `article` = '$article', `author` = '$nama', `status` = '$status' WHERE `wiki`.`id_wiki` = '$id_wiki';");
+		return $hsl;
+	}
 
 
 }

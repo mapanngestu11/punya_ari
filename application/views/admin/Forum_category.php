@@ -46,16 +46,16 @@
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Add Category</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Add Category</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                <form action="<?php echo base_url().'index.php/admin/article_category/add_article_category'?>" method="POST">
+                <form action="<?php echo base_url().'index.php/admin/forum_category/add_forum_category'?>" method="POST">
                     <div class="modal-body">
                         <label>Name</label>
                         <input type="text" name="nama" class="form-control" required>
-                        <input type="hidden" name="status" value="article" class="form-control" required>
+                        <input type="hidden" name="status" value="forum" class="form-control" required>
 
                     </div>
                     <div class="modal-footer">
@@ -154,7 +154,7 @@
                         <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form class="form-horizontal" action="<?php echo base_url().'index.php/admin/article_category/delete_article_category'?>" method="post" enctype="multipart/form-data">
+                    <form class="form-horizontal" action="<?php echo base_url().'index.php/admin/forum_category/delete_forum_category'?>" method="post" enctype="multipart/form-data">
                     <div class="modal-body">
 							<input type="hidden" name="kode" value="<?php echo $id_kategori;?>"/>
                             <p>Apakah Anda yakin mau menghapus <b><?php echo $nama;?></b> ?</p>
@@ -187,7 +187,7 @@
                         <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form class="form-horizontal" action="<?php echo base_url().'index.php/admin/article_category/update_article_category'?>" method="post" enctype="multipart/form-data">
+                    <form class="form-horizontal" action="<?php echo base_url().'index.php/admin/forum_category/update_forum_category'?>" method="post" enctype="multipart/form-data">
                     <div class="modal-body">
 
                                     <div class="form-group">

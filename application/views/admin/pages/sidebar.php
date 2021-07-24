@@ -53,9 +53,9 @@
         <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Forum</h6>
             <a class="collapse-item" href="utilities-color.html">Thread List</a>
-            <a class="collapse-item" href="utilities-border.html">My Thread List</a>
-            <a class="collapse-item" href="utilities-animation.html">Add New Thread</a>
-            <a class="collapse-item" href="utilities-other.html">Category</a>
+            <a class="collapse-item" href="<?php echo site_url('admin/my_thread');?>">My Thread List</a>
+            <a class="collapse-item" href="<?php echo site_url('admin/add_thread');?>">Add New Thread</a>
+            <a class="collapse-item" href="<?php echo site_url('admin/forum_category');?>">Category</a>
         </div>
     </div>
 </li>

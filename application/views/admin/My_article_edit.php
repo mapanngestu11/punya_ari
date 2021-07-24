@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php include 'pages/Head_Dashboard.php';?>
 
 <body id="page-top">
 
@@ -9,7 +8,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-       <?php include 'pages/sidebar.php';?>
+        <?php include 'pages/sidebar.php';?>
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
@@ -41,7 +40,8 @@
                     </form>
 
                     <!-- Topbar Navbar -->
-                   <?php include 'pages/topbar.php';?>
+                 <?php include 'pages/topbar.php';?>
+
                 </nav>
                 <!-- End of Topbar -->
 
@@ -50,96 +50,77 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">My Article</h1>
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+                        <h1 class="h3 mb-0 text-gray-800">Article</h1>
                     </div>
 
-                    <!-- Content Row -->
                   
-
-                    <!-- Content Row -->
-
-
-                    <!-- Content Row -->
                     <div class="row">
 
+                      
 
+                            <!-- Default Card Example -->
+                        
 
-                        <div class="col-mb-4">
-
-                            <!-- Illustrations -->
-                            <?php foreach ($data->result() as $row) : ?>
-                            <div class="card shadow mb-4">
+                            <!-- Basic Card Example -->
+                            <div class="card shadow col-md-10">
                                 <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">My Article</h6>
-                                    <h6 class="m-0 font-weight-bold text-primary">Post :      <?php echo $row->time_post;?></h6>
-                                    <h6 class="m-0 font-weight-bold text-primary">Author :      <?php echo $row->author;?></h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Edit Article</h6>
                                 </div>
-                            
+                                <?php
+        $b=$data->row_array();
+    ?>
+                 <form action="<?php echo base_url().'index.php/admin/add_article/update'?>" method="post" enctype="multipart/form-data">
                                 <div class="card-body">
-                                    <div class="text-center">
-                                        <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
-                                            src="<?php echo base_url().'assets/images/'.$row->image;?>" alt="...">
+                                    <div class="form-group">
+                                    <label>Tittle</label>
+                                    <input type="hidden" name="kode" value="<?php echo $b['id_wiki'];?>">
+                                    <input type="text" class="form-control"value="<?php echo $b['tittle'];?>" name="tittle" required>
+                                    <input type="hidden" class="form-control" name="status" value="pending" required>
+                                    </div>  
+                                    <div class="form-group">
+                                    <label>Category</label>
+                                    <select class="form-control select2" name="category" style="width: 100%;" required>
+                                    <option value="<?php echo $b['category'];?>"><?php echo $b['category'];?></option>
+                                    <?php
+                                            $no=0;
+                                            foreach ($data->result_array() as $i) :
+                                            $no++;
+                                            
+                                            $nama=$i['nama'];
+                        
+                                            ?>
+                                        <option value="<?php echo $nama;?>"><?php echo $nama;?></option>
+                                        <?php endforeach;?>
+                                </select>
                                     </div>
-                                    <p>      <?php echo $row->article;?></p>
-                                    <button class="btn btn-primary">   <?php echo $row->status;?></button>
-                                    <a class="btn btn-warning" href="<?php echo base_url().'index.php/admin/my_article/get_edit/'.$row->id_wiki;?>">Edit</span></a>
-                                    <a class="btn btn-danger" data-toggle="modal" data-target="#ModalHapus<?php echo $row->id_wiki;?>">Delete</a>
-                                </div>
-                           
-                            </div>
-                            <?php endforeach;?>
+                                  <div class="form-group">
+                                    <label>Image</label>
+                                    <input type="file" class="form-control" name="filefoto" required>
+                                  </div>
 
-                <nav>
-                    <?php error_reporting(0); echo $page;?>
-                </nav>
-                            <!-- Approach -->
+                                  <div class="form-group">
+                                    <label>Article</label>
+                                  <textarea name="article"  class="form-control"><?php echo $b['article'];?></textarea>
+                                  </div>
+                                  <button type="submit" class="btn btn-primary btn-flat" id="simpan">Save Article</button>
+                            </form>
                     
+                                </div>
+                            </div>
 
-                        </div>
+               
+
+                    
                     </div>
 
                 </div>
                 <!-- /.container-fluid -->
 
             </div>
-
-            <?php foreach ($data->result_array() as $i) :
-              $id_wiki=$i['id_wiki'];
-            ?>
-	<!--Modal Hapus Pengguna-->
-        <div class="modal fade" id="ModalHapus<?php echo $id_wiki;?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Delete Article</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <form class="form-horizontal" action="<?php echo base_url().'index.php/admin/my_article/delete'?>" method="post" enctype="multipart/form-data">
-                    <div class="modal-body">
-							       <input type="hidden" name="kode" value="<?php echo $id_wiki;?>"/>
-                
-                            <p>Apakah Anda yakin mau menghapus artikel tersebut  <b></b> ?</p>
-
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default btn-flat" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary btn-flat" id="simpan">Hapus</button>
-                    </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-	<?php endforeach;?>
-
-
             <!-- End of Main Content -->
 
             <!-- Footer -->
-     <?php include 'pages/footer.php';?>
+         <?php include 'pages/footer.php';?>
             <!-- End of Footer -->
 
         </div>
@@ -156,11 +137,11 @@
     <!-- Logout Modal-->
 <?php include 'pages/logout.php';?>
 
-    <!-- Bootstrap core JavaScript-->
-<?php include 'pages/footer_add.php';?>
+ 
+
+    <?php include 'pages/footer_add.php';?>
 
 </body>
-
 <?php if($this->session->flashdata('msg')=='error'):?>
         <script type="text/javascript">
                 $.toast({

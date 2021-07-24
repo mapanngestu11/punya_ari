@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class My_article extends CI_Controller {
+class My_thread extends CI_Controller {
 
 
     function __construct(){
@@ -13,7 +13,7 @@ class My_article extends CI_Controller {
         $this->load->model('m_login');
 		$this->load->model('m_kategori');
 		$this->load->model('m_pengguna');
-		$this->load->model('m_article');
+		$this->load->model('m_forum');
 		$this->load->library('upload');
 		$this->load->library('pagination');
 		
@@ -23,9 +23,9 @@ class My_article extends CI_Controller {
 		if($this->session->userdata('akses')=='admin'){
 
             $kode=$this->session->userdata('nama');
-			$data['data']=$this->m_article-> get_my_article($kode);
+			$data['data']=$this->m_forum-> get_my_thread($kode);
  
-			$this->load->view('admin/my_article',$data);
+			$this->load->view('admin/my_thread',$data);
             
 		}else{
 			redirect('home');

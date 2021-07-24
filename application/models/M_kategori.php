@@ -28,10 +28,24 @@ class M_kategori extends CI_Model{
         return $this->db->insert($this->_table, $this);
     }
 
+    public function save_forum_category()
+    {
+        $post = $this->input->post();
+
+        $this->nama = $post["nama"];
+        $this->status = $post["status"];     
+        return $this->db->insert($this->_table, $this);
+    }
+
     function get_category_article(){
 		$hsl=$this->db->query("SELECT * from kategori Where status ='article' ");
 		return $hsl;
 	}
+    function get_category_forum(){
+		$hsl=$this->db->query("SELECT * from kategori Where status ='forum' ");
+		return $hsl;
+	}
+    
     function delete($kode){
 		$hsl=$this->db->query("DELETE from kategori where id_kategori='$kode'");
 		return $hsl;

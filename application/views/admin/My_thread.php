@@ -82,10 +82,10 @@
                                         <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
                                             src="<?php echo base_url().'assets/images/'.$row->image;?>" alt="...">
                                     </div>
-                                    <p>      <?php echo $row->article;?></p>
+                                    <p>      <?php echo $row->forum;?></p>
                                     <button class="btn btn-primary">   <?php echo $row->status;?></button>
-                                    <a class="btn btn-warning" href="<?php echo base_url().'index.php/admin/my_article/get_edit/'.$row->id_wiki;?>">Edit</span></a>
-                                    <a class="btn btn-danger" data-toggle="modal" data-target="#ModalHapus<?php echo $row->id_wiki;?>">Delete</a>
+                                    <a class="btn btn-warning" href="<?php echo base_url().'index.php/admin/my_article/get_edit/'.$row->id_forum;?>">Edit</span></a>
+                                    <a class="btn btn-danger" data-toggle="modal" data-target="#ModalHapus<?php echo $row->id_forum;?>">Delete</a>
                                 </div>
                            
                             </div>
@@ -178,7 +178,7 @@
         <script type="text/javascript">
                 $.toast({
                     heading: 'Success',
-                    text: "Artikel Berhasil disimpan ke database.",
+                    text: "Thread Berhasil disimpan ke database.",
                     showHideTransition: 'slide',
                     icon: 'success',
                     hideAfter: false,
