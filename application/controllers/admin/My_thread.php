@@ -33,17 +33,17 @@ class My_thread extends CI_Controller {
     }
 	function get_edit(){
 		$kode=$this->uri->segment(4);
-		$data['data']=$this->m_article->get_my_article_kode($kode);
-		$data['ket']=$this->m_kategori-> get_category_article();
+		$data['data']=$this->m_forum->get_my_thread_kode($kode);
+		$data['ket']=$this->m_kategori-> get_category_forum();
 		$this->load->view('admin/pages/head_dashboard');
-		$this->load->view('admin/my_article_edit',$data);
+		$this->load->view('admin/my_thread_edit',$data);
 	}
 
     function delete(){
 		$kode=strip_tags($this->input->post('kode'));
-		$this->m_article->delete_my_article($kode);
+		$this->m_forum->delete_my_thread($kode);
 		echo $this->session->set_flashdata('msg','success-hapus');
-        redirect('admin/my_article');
+        redirect('admin/my_thread');
 	}
 
     function logout(){

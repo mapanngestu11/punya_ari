@@ -84,7 +84,7 @@
                                     </div>
                                     <p>      <?php echo $row->forum;?></p>
                                     <button class="btn btn-primary">   <?php echo $row->status;?></button>
-                                    <a class="btn btn-warning" href="<?php echo base_url().'index.php/admin/my_article/get_edit/'.$row->id_forum;?>">Edit</span></a>
+                                    <a class="btn btn-warning" href="<?php echo base_url().'index.php/admin/my_thread/get_edit/'.$row->id_forum;?>">Edit</span></a>
                                     <a class="btn btn-danger" data-toggle="modal" data-target="#ModalHapus<?php echo $row->id_forum;?>">Delete</a>
                                 </div>
                            
@@ -106,10 +106,10 @@
             </div>
 
             <?php foreach ($data->result_array() as $i) :
-              $id_wiki=$i['id_wiki'];
+              $id_forum=$i['id_forum'];
             ?>
 	<!--Modal Hapus Pengguna-->
-        <div class="modal fade" id="ModalHapus<?php echo $id_wiki;?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal fade" id="ModalHapus<?php echo $id_forum;?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                 <div class="modal-header">
@@ -118,11 +118,11 @@
                         <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form class="form-horizontal" action="<?php echo base_url().'index.php/admin/my_article/delete'?>" method="post" enctype="multipart/form-data">
+                    <form class="form-horizontal" action="<?php echo base_url().'index.php/admin/my_thread/delete'?>" method="post" enctype="multipart/form-data">
                     <div class="modal-body">
-							       <input type="hidden" name="kode" value="<?php echo $id_wiki;?>"/>
+							       <input type="hidden" name="kode" value="<?php echo $id_forum;?>"/>
                 
-                            <p>Apakah Anda yakin mau menghapus artikel tersebut  <b></b> ?</p>
+                            <p>Apakah Anda yakin mau menghapus Thread tersebut  <b></b> ?</p>
 
                     </div>
                     <div class="modal-footer">

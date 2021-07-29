@@ -52,7 +52,7 @@
         data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Forum</h6>
-            <a class="collapse-item" href="utilities-color.html">Thread List</a>
+            <a class="collapse-item" href="<?php echo site_url('admin/list_thread');?>">Thread List</a>
             <a class="collapse-item" href="<?php echo site_url('admin/my_thread');?>">My Thread List</a>
             <a class="collapse-item" href="<?php echo site_url('admin/add_thread');?>">Add New Thread</a>
             <a class="collapse-item" href="<?php echo site_url('admin/forum_category');?>">Category</a>
@@ -72,10 +72,10 @@
         data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Document</h6>
-            <a class="collapse-item" href="utilities-color.html">Document List</a>
-            <a class="collapse-item" href="utilities-border.html">My Document List</a>
-            <a class="collapse-item" href="utilities-animation.html">Upload Document</a>
-            <a class="collapse-item" href="utilities-other.html">Category</a>
+            <a class="collapse-item" href="<?php echo site_url('admin/list_document');?>">Document List</a>
+            <a class="collapse-item" href="<?php echo site_url('admin/my_document');?>">My Document List</a>
+            <a class="collapse-item" href="<?php echo site_url('admin/upload_document');?>">Upload Document</a>
+            <a class="collapse-item" href="<?php echo site_url('admin/document_category');?>">Category</a>
         </div>
     </div>
 </li>
@@ -92,10 +92,10 @@
         data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Note Of Meeting</h6>
-            <a class="collapse-item" href="utilities-color.html">Note List</a>
-            <a class="collapse-item" href="utilities-border.html">My Note List</a>
-            <a class="collapse-item" href="utilities-animation.html">Upload Note</a>
-            <a class="collapse-item" href="utilities-other.html">Category</a>
+            <a class="collapse-item" href="<?php echo site_url('admin/list_note');?>">Note List</a>
+            <a class="collapse-item" href="<?php echo site_url('admin/my_note');?>">My Note List</a>
+            <a class="collapse-item" href="<?php echo site_url('admin/upload_note');?>">Upload Note</a>
+            <a class="collapse-item" href="<?php echo site_url('admin/note_category');?>">Category</a>
         </div>
     </div>
 </li>
@@ -110,10 +110,10 @@
         data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Lesson Of Learned</h6>
-            <a class="collapse-item" href="utilities-color.html">Topic List</a>
-            <a class="collapse-item" href="utilities-border.html">My Topic List</a>
-            <a class="collapse-item" href="utilities-animation.html">Add New Topic</a>
-            <a class="collapse-item" href="utilities-other.html">Category</a>
+            <a class="collapse-item" href="<?php echo site_url('admin/list_lesson');?>">Topic List</a>
+            <a class="collapse-item" href="<?php echo site_url('admin/my_lesson');?>">My Topic List</a>
+            <a class="collapse-item" href="<?php echo site_url('admin/add_lesson');?>">Add New Topic</a>
+            <a class="collapse-item" href="<?php echo site_url('admin/lesson_category');?>">Category</a>
         </div>
     </div>
 </li>
@@ -128,20 +128,34 @@
         data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Event</h6>
-            <a class="collapse-item" href="utilities-color.html">Event List</a>
-            <a class="collapse-item" href="utilities-border.html">My Event List</a>
-            <a class="collapse-item" href="utilities-animation.html">Add New Event</a>
-            <a class="collapse-item" href="utilities-animation.html">Enrollment Event</a>
-            <a class="collapse-item" href="utilities-other.html">Category</a>
+            <a class="collapse-item" href="<?php echo site_url('admin/list_event');?>">Event List</a>
+            <a class="collapse-item" href="<?php echo site_url('admin/my_event');?>">My Event List</a>
+            <a class="collapse-item" href="<?php echo site_url('admin/add_event');?>">Add New Event</a>
+
+            <a class="collapse-item" href="<?php echo site_url('admin/event_category');?>">Category</a>
         </div>
     </div>
 </li>
 
 <li class="nav-item">
-    <a class="nav-link" href="charts.html">
-    <i class="fas fa-shield-alt"></i>
-        <span>Verify Knowledge</span></a>
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities5"
+        aria-expanded="true" aria-controls="collapseUtilities">
+        <i class="fas fa-shield-alt"></i>
+        <span>Verify Knowledge</span>
+    </a>
+    <div id="collapseUtilities5" class="collapse" aria-labelledby="headingUtilities"
+        data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Verify Knowledge</h6>
+            <a class="collapse-item" href="<?php echo site_url('admin/verify_wiki');?>">Wiki</a>
+            <a class="collapse-item" href="<?php echo site_url('admin/verify_forum');?>">Forum</a>
+            <a class="collapse-item" href="<?php echo site_url('admin/verify_document');?>">Document Management</a>
+            <a class="collapse-item" href="<?php echo site_url('admin/verify_note');?>">Note Of meeting</a>
+            <a class="collapse-item" href="<?php echo site_url('admin/verify_lesson');?>">Lesson learned</a>
+        </div>
+    </div>
 </li>
+
 
 
 <hr class="sidebar-divider">
